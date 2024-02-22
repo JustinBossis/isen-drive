@@ -2,7 +2,7 @@ const path = require('path');
 const express = require("express");
 const morgan = require('morgan');
 const app = express()
-const port = 3000;
+const port = process.env.PORT;
 require("dotenv").config()
 
 app.use(morgan('tiny'));
