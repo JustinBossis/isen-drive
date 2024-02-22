@@ -10,7 +10,7 @@ block content
       label(for='category') Rayon:
       select#category.form-control(name='categoryId' required='true')
         for category in categories
-          option(value=category._id, selected= (product ? product.categoryId: "") === category._id) #{category.name}
+          option(value=category._id, selected= (product ? product.categoryId.toString(): "") === category._id.toString()) #{category.name}
 
     div.form-group
       label(for='description') Description:

@@ -61,6 +61,7 @@ const Product = {
             data.tags = [data.tags];
         }
         data.tags = data.tags.map(tag => new ObjectId(tag));
+        data.categoryId = new ObjectId(data.categoryId)
         try {
             await client.connect()
             const db = client.db(dbName);
@@ -77,6 +78,7 @@ const Product = {
             data.tags = [data.tags];
         }
         data.tags = data.tags.map(tag => new ObjectId(tag));
+        data.categoryId = new ObjectId(data.categoryId)
         try {
             await client.connect()
             const db = client.db(dbName);
