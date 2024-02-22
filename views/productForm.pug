@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Nom:
+      input#name.form-control(type='text' name='name' required='true' value= product ? product.name:"")
+
+    div.form-group
+      label(for='category') Rayon:
+      select#category.form-control(name='categoryId' required='true')
+        for category in categories
+          option(value=category._id, selected= (product ? product.categoryId: "") === category._id) #{category.name}
+
+    div.form-group
+      label(for='description') Description:
+      textarea#description.form-control(name='description' rows=5 required='true')= product ? product.description : ""
+
+    div.form-group
+      label(for='price') Prix:
+      input#price.form-control(type='number' name='price' required='true' step='.01' value= product ? product.price: "")
+
+    div.form-group
+      label Tags:
+      br
+      for tag in tags
+        div(style='display: inline; padding-right:10px;')
+          input.checkbox-input(type='checkbox', name='tags', id=tag._id, value=tag._id, checked= (product ? product.tags.toString(): []).includes(tag._id)? "checked" : undefined)
+          label(for=tag._id) #{tag.name}
+
+    button.btn.btn-primary(type='submit') Valider

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.grid-container
+    each product in products
+      div.grid-item
+        a.item-title(href="/products/" + product._id) #{product.name}
+        div #{product.price} €
+    else
+      p Ce rayon est vide
+  hr
+  p
+    a.inline-10(href='/categories/' + categoryId + '/delete') Supprimer le rayon
+    a.inline-10(href='/categories/' + categoryId + '/update') Modifier le rayon

@@ -1,0 +1,10 @@
+extends layout
+block content
+    b #{product.price} €
+    p #{product.description}
+    for tag in productTags
+        span.badge.rounded-pill.text-bg-info #{tag.name}
+    hr
+    p
+        a.inline-10(href='/products/' + product._id + '/delete') Supprimer le produit
+        a.inline-10(href='/products/' + product._id + '/update') Modifier le produit

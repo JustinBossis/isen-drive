@@ -1,0 +1,21 @@
+{
+  "name": "isen-drive",
+  "version": "1.0.0",
+  "description": "Mini-site de gestion du catalogue d'un drive",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "devstart": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.17.2",
+    "express-validator": "^7.0.1",
+    "mongodb": "^6.3.0",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
+  }
+}

@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    p Êtes vous sur de vouloir supprimer le tag #{tag.name} ?
+    form(method='POST' action='')
+        button.btn.btn-danger(type=submit) Confirmer

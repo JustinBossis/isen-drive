@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    div.grid-container
+        each tag in tags
+            div.grid-item
+                a.item-title(href="/tags/" + tag._id) #{tag.name}
+                if tag.size > 1
+                    div #{tag.size} articles
+                else
+                    div #{tag.size} article
+        else
+            p Aucun rayon à afficher.
